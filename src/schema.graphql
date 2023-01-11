@@ -1,0 +1,15 @@
+type todos {
+	id: ID
+	name: String
+	done: Boolean
+}
+
+type DeletedResourceResponse {
+	deletedId: ID
+	success: Boolean
+}
+
+type Query {
+	getTodosById(todosId: ID!): todos
+	getAllTodos: [todos]
+}
