@@ -1,4 +1,4 @@
-type todos {
+type Todos {
 	id: ID
 	name: String
 	done: Boolean
@@ -10,6 +10,12 @@ type DeletedResourceResponse {
 }
 
 type Query {
-	getTodosById(todosId: ID!): todos
-	getAllTodos: [todos]
+	getTodosById(todosId: ID!): Todos
+	getAllTodos: [Todos]
+}
+
+type Mutation {
+	createTodo(name: String!, description: String): Todos
+	updateTodo(id: ID!, name: String!, description: String!): Todos
+	deleteTodo(todoId: ID!): DeletedResourceResponse
 }
